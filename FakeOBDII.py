@@ -309,7 +309,7 @@ class ELM:
                 self.sendToICSim(cmd)
         '''
         logging.info(cmd)
-        print(cmd)
+        #print(cmd)
         for i in self.sortedOBDMsg:
             key = i[0]
             val = i[1]
