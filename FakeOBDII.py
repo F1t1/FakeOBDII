@@ -294,7 +294,6 @@ class ELM:
               send_cmd(data)
         '''
         #########################
-        '''
         management_headers = ["ATZ", "ATE0", "ATL0", "ATI", "ATH1", "ATR0", "ATCAF0", "ATCRA"]
         tosend = True
         for i in management_headers:
@@ -307,9 +306,7 @@ class ELM:
             else:
                 logging.info("Found complete packet to ICSim. Sending to ICSim..." + cmd)
                 self.sendToICSim(cmd)
-        '''
         logging.info(cmd)
-        #print(cmd)
         for i in self.sortedOBDMsg:
             key = i[0]
             val = i[1]
