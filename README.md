@@ -8,6 +8,7 @@ This is a modification of https://github.com/Ircama/ELM327-emulator to use it as
 - ICSim (https://github.com/zombieCraig/ICSim)
 - Ruby (tested on ruby 2.5.7p206)
 - Python3 (tested on python 3.7.5)
+- python-can (pip3 install python-can)
 - can-utils (sudo apt-get install can-utils)
 - Serialport ruby gem (gem install serialport)
 
