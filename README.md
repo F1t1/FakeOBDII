@@ -14,3 +14,17 @@ This is a modification of https://github.com/Ircama/ELM327-emulator to use it as
 
 # PoC
 This PoC will use FakeOBDII to link ICSim and elm327_relay.rb. After this, it is possible to use Metasploit as if we were operating with a real ELM327 bluetooth device.
+
+- Execute setup_vcan.sh to start the virtual CAN interface. (ICSim)
+  - ./setup_vcan.sh
+- Start the emulator (ICSim)
+  - ./icsim vcan0 and ./controls vcan0
+- Init FakeOBDII: 
+  - python3 FakeOBDII.py
+- Execute elm327_relay.rb using the port given by FakeOBDII.py
+  - /usr/share/metasploit-framework/tools/hardware/elm327_relay.rb -s /dev/pts/XXX
+- Start msfconsole and create a new hwbridge session associated with elm327_relay.
+  - use client/hwbridge/connect
+- Use any module under post/hardware/automotive/
+
+![PoC](./images/fakeobd2.PNG)
